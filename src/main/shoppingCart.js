@@ -3,6 +3,7 @@ class ShoppingCart {
     this.items = [];
   }
 
+  // Add Items in Cart
   addItem(product, price) {
     if (!product || !price || typeof price !== 'number' || price <= 0) {
       throw new Error("Invalid input. Please provide a valid product name and a positive price.");
@@ -11,6 +12,8 @@ class ShoppingCart {
     this.items.push({ product, price });
   }
 
+
+  // Remove Items in Cart
   removeItem(product) {
     if (!product) {
       throw new Error("Invalid input. Please provide a valid product name.");
@@ -24,14 +27,17 @@ class ShoppingCart {
     }
   }
 
+  // if empty
   isEmpty() {
     return this.items.length === 0;
   }
 
+  // get Items length
   getItemCount() {
     return this.items.length;
   }
 
+  // get total Price
   getTotalPrice() {
     if (this.items.length === 0) {
       return "0.00";
