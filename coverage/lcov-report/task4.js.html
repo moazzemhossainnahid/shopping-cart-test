@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for shoppingCart.js</title>
+    <title>Code coverage report for task4.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> shoppingCart.js</h1>
+        <h1><a href="index.html">All files</a> task4.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -115,13 +115,13 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
@@ -144,7 +144,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -163,64 +163,64 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span></td><td class="text"><pre class="prettyprint lang-js">class ShoppingCart {
-  constructor() {
-    this.items = [];
-  }
-&nbsp;
-  // Add Items in Cart
-  addItem(product, price) {
-    if (!product || !price || typeof price !== 'number' || price &lt;= 0) {
-      throw new Error("Invalid input. Please provide a valid product name and a positive price.");
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">class ShoppingCart {
+    constructor() {
+      this.items = [];
     }
-&nbsp;
-    this.items.push({ product, price });
-  }
-&nbsp;
-&nbsp;
-  // Remove Items in Cart
-  removeItem(product) {
-    if (!product) {
-      throw new Error("Invalid input. Please provide a valid product name.");
+  
+    // Add Items in Cart
+    addItem(product, price) {
+      if (!product || !price || typeof price !== 'number' || price &lt;= 0) {
+        throw new Error("Invalid input. Please provide a valid product name and a positive price.");
+      }
+  
+      this.items.push({ product, price });
     }
-&nbsp;
-    const index = this.items.findIndex(item =&gt; item.product === product);
-    if (index !== -1) {
-      this.items.splice(index, 1);
-    } else {
-      // throw new Error("Product not found in the shopping cart.");
+  
+  
+    // Remove Items in Cart
+    removeItem(product) {
+      if (!product) {
+        throw new Error("Invalid input. Please provide a valid product name.");
+      }
+  
+      const index = this.items.findIndex(item =&gt; item.product === product);
+      if (index !== -1) {
+        this.items.splice(index, 1);
+      } else {
+        // throw new Error("Product not found in the shopping cart.");
+      }
+    }
+  
+    // if empty
+    isEmpty() {
+      return this.items.length === 0;
+    }
+  
+    // get Items length
+    getItemCount() {
+      return this.items.length;
+    }
+  
+    // get total Price
+    getTotalPrice() {
+      if (this.items.length === 0) {
+        return "0.00";
+      }
+  
+      return this.items.reduce((total, item) =&gt; total + item.price, 0).toFixed(2);
     }
   }
-&nbsp;
-  // if empty
-  isEmpty() {
-    return this.items.length === 0;
-  }
-&nbsp;
-  // get Items length
-  getItemCount() {
-    return this.items.length;
-  }
-&nbsp;
-  // get total Price
-  getTotalPrice() {
-    if (this.items.length === 0) {
-      return "0.00";
-    }
-&nbsp;
-    return this.items.reduce((total, item) =&gt; total + item.price, 0).toFixed(2);
-  }
-}
-&nbsp;
-// Export the ShoppingCart class
-module.exports = ShoppingCart;</pre></td></tr></table></pre>
+  
+  // Export the ShoppingCart class
+  module.exports = ShoppingCart;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-11-28T08:02:16.849Z
+                at 2023-11-28T12:33:05.124Z
             </div>
         <script src="prettify.js"></script>
         <script>
