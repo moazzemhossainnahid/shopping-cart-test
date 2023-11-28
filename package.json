@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
+    "run": "webpack",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "keywords": [],
@@ -13,5 +14,8 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "webpack": "^5.89.0"
   }
 }

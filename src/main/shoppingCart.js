@@ -23,7 +23,7 @@ class ShoppingCart {
     if (index !== -1) {
       this.items.splice(index, 1);
     } else {
-      throw new Error("Product not found in the shopping cart.");
+      // throw new Error("Product not found in the shopping cart.");
     }
   }
 
